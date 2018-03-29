@@ -1,3 +1,11 @@
-test('adds 1 + 2 to equal 3', () => {
-  expect((1 + 2)).toBe(3);
-});
+const request = require('supertest');
+const app = require('../api/index');
+
+describe('test create trip', () => {
+  test('It should return 201 after POST method', () => {
+    return request(app).post("/api/trips").then(response => (
+      expect(response.statusCode).toBe(201)
+    ))
+  });
+  }
+)
